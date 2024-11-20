@@ -37,9 +37,8 @@ class Calculator{
 }
 function operate(actions, values)
 {
-    const actLength = actions.length;
     var obj1 = new Calculator(values[0]);
-    for(let i=1;i<actLength;i++ ){
+    for(let i=1;i<actions.length;i++ ){
         if(actions[i]==="add"){
             obj1 = obj1.add(values[i]);
         }
