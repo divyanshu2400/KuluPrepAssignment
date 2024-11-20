@@ -1,22 +1,9 @@
-function isFalsy(num, idx){
-    if(num ){
-        return false;
-    }
-    return true;
-}
 function filter(arr, fn){
     let n=arr.length;
     const newArr = [];
     for(let i=0; i<n; i++){
-        if(fn.name === "greaterThan10"){
-            if(!isFalsy(arr[i],i) && fn(arr[i])){newArr.push(arr[i]);}
-        }
-        else if(fn.name === "firstIndex"){
-            if(!isFalsy(arr[i],i) && fn(i)){newArr.push(arr[i]);}
-        }
-        else{
-            arr[i]=fn(arr[i]);
-            if(!isFalsy(arr[i],i)){newArr.push(arr[i]);}
+        if(fn(arr[i],i)){
+            newArr.push(arr[i]);
         }
     }
     return newArr;
@@ -29,7 +16,7 @@ function ex1(){
 }
 function ex2(){
     let arr = [1,2,3];
-    let fn = function firstIndex(i) { return i === 0; }
+    let fn = function firstIndex(n,i) { return i === 0; }
     const newArray = filter(arr, fn);
     console.log(newArray);
 }
