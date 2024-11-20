@@ -1,8 +1,8 @@
 function isFalsy(num, idx){
-    if(num === 0 || num === "" || num === null || num === undefined || num === NaN){
-        return true;
+    if(num ){
+        return false;
     }
-    return false;
+    return true;
 }
 function filter(arr, fn){
     let n=arr.length;
